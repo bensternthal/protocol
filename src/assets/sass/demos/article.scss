@@ -9,9 +9,10 @@
     background: rgba(0, 0, 0, .05);
 }
 
-.mzp-c-sidemenu {
-    @extend .mzp-qa-visible;
-}
+// .mzp-c-article,
+// .mzp-l-sidebar {
+//     @extend .mzp-qa-visible;
+// }
 // -->
 
 .mzp-c-article-title {
@@ -24,6 +25,8 @@
 
 // Step down the heading levels
 .mzp-c-article {
+    max-width: 640px;
+
     h2 {
         @include text-display-level3;
     }
@@ -99,6 +102,10 @@
     }
 }
 
+.mzp-c-sidemenu-summary {
+    @include text-small;
+}
+
 .mzp-c-sidemenu-label {
     @include open-sans;
     @include text-small;
@@ -116,52 +123,40 @@
     }
 }
 
-.js {
-    .mzp-c-sidemenu {
-        position: relative;
-    }
-}
+// .js {
+//     .mzp-c-sidemenu {
+//         position: relative;
+//         height: 4em;
+//         overflow: hidden;
+//         margin: 0 0 $spacing-xl;
+
+//         .mzp-is-current {
+//             position: absolute;
+//             top: 1.5em;
+//             width: 100%;
+//         }
+//     }
+// }
 
 
 @media #{$media-md} {
-    .mzp-c-sidemenu-label {
+    .mzp-c-sidemenu-summary {
         @include visually-hidden;
     }
 
     .mzp-has-sidebar {
         .mzp-c-article {
             @include grid-two-thirds;
+            float: left;
+            padding-left: $spacing-md;
         }
 
         .mzp-l-sidebar {
             @include grid-third;
-        }
-    }
-
-    .mzp-l-sidebar-right {
-        .mzp-c-article {
-            float: left;
-            padding-right: $spacing-md;
-        }
-
-        .mzp-l-sidebar {
-            float: right;
-            padding-left: $spacing-md;
-        }
-    }
-
-    .mzp-l-sidebar-left {
-        .mzp-c-article {
-            float: right;
-            padding-left: $spacing-md;
-        }
-
-        .mzp-l-sidebar {
             float: left;
             padding-right: $spacing-md;
         }
     }
-
 
     // @supports (display: grid) {
     //     .mzp-has-sidebar {
@@ -194,6 +189,7 @@
     .mzp-has-sidebar {
         .mzp-c-article {
             @include grid-three-quarters;
+            max-width: 640px;
         }
 
         .mzp-l-sidebar {
@@ -201,6 +197,18 @@
         }
     }
 }
+
+// @media #{$media-xl} {
+//     .mzp-has-sidebar {
+//         .mzp-c-article {
+//             @include grid-half;
+//         }
+
+//         .mzp-l-sidebar {
+//             @include grid-quarter;
+//         }
+//     }
+// }
 
 
 

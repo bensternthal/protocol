@@ -1,7 +1,11 @@
+// Grid columns
+$column-width:  8.333%; // 100% / 12 columns
+$gutter-width:  $layout-sm;
+
+
 // Column spans for standard column widths
 // Usage:
 //  .foo { @include colspan(4); }
-
 @mixin colspan($columns) {
     @include border-box;
     width: $column-width * $columns;

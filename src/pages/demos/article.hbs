@@ -2,7 +2,6 @@
 title: Article Page
 notes: This is demo of a basic text page.
 layout: blank
-htmlclass: no-js
 labels:
   - inprogress
   - prototype
@@ -55,24 +54,32 @@ styles:
 </header>
 
 
-<main class="mzp-has-sidebar mzp-l-sidebar-left mzp-l-content">
+<main class="mzp-has-sidebar mzp-l-content">
 
   <aside class="mzp-l-sidebar">
     <nav class="mzp-c-sidemenu">
-      <h3 class="mzp-c-sidemenu-label">Menu label</h3>
+      <section class="mzp-c-sidemenu-summary">
+        <h3 class="mzp-c-sidemenu-label">Menu label</h3>
+        <ul>
+          <li>Menu title</li>
+          <li class="mzp-is-current">Menu item one</li>
+        </ul>
+      </section>
 
-      <h4 class="mzp-c-sidemenu-title mzp-is-current"><a href="#">Menu Title</a></h4>
-      <ul>
-        <li><a href="#">Menu item one</a></li>
-        <li><a href="#">Menu item two</a></li>
-        <li><a href="#">Menu item three</a></li>
-      </ul>
+      <section class="mzp-c-sidemenu-main">
+        <h4 class="mzp-c-sidemenu-title"><a href="#">Menu Title</a></h4>
+        <ul>
+          <li class="mzp-is-current"><a href="#">Menu item one</a></li>
+          <li><a href="#">Menu item two</a></li>
+          <li><a href="#">Menu item three</a></li>
+        </ul>
 
-      <h4 class="mzp-c-sidemenu-title"><a href="#">Second menu</a></h4>
-      <ul>
-        <li><a href="#">This menu item has a longer label that will wrap to a few lines, please don't do this</a></li>
-        <li><a href="#">And one more menu item</a></li>
-      </ul>
+        <h4 class="mzp-c-sidemenu-title"><a href="#">Second menu</a></h4>
+        <ul>
+          <li><a href="#">This menu item has a longer label that will wrap to a few lines, please don't do this</a></li>
+          <li><a href="#">And one more menu item</a></li>
+        </ul>
+      </section>
     </nav>
   </aside>
 
@@ -80,39 +87,14 @@ styles:
     <h1 class="mzp-c-article-title">Article Title</h1>
 
     <div class="mzp-c-article-intro">
-      <p>Et pri porro ceteros tacimates, est at option dignissim intellegat.
-        Tollit fuisset urbanitas nec no, feugiat sensibus an mea, nominavi
-        <a href="#">interpretaris te eam</a>. No virtute imperdiet pro, ut
-        pro sint viderer philosophia. Torquatos necessitatibus sit in, ad
-        sit summo molestie adolescens, liber oratio veniam in per.</p>
+      <p>Article introduction. Et pri porro ceteros tacimates, est at option
+        dignissim intellegat. Tollit fuisset urbanitas nec no, feugiat sensibus
+        an mea, nominavi <a href="#">interpretaris te eam</a>. No virtute
+        imperdiet pro, ut pro sint viderer philosophia. Torquatos necessitatibus
+        sit in, ad sit summo molestie adolescens, liber oratio veniam in per.</p>
     </div>
 
-    <ul class="mzp-c-article-links">
-      <li>
-        <h4><a href="#">
-          Mozilla Foundation Security Advisories
-        </a></h4>
-        for all products
-      </li>
-      <li>
-        <h4><a href="#">
-          Known vulnerabilities
-        </a></h4>
-        listed by product
-      </li>
-      <li>
-        <h4>
-          <a href="#">The Mozilla Blog
-        </a></h4>
-        announces all of our releases
-      </li>
-      <li>
-        <h4><a href="#">
-          The Mozilla Security Blog
-        </a></h4>
-        features security-related articles about Mozilla products.
-      </li>
-    </ul>
+
 
     <p>Dicta constituam ad nam, viderer consectetuer nec at. Sea no malorum
       epicurei, aperiri verterem eu duo, ei mel nostro dissentias. Qui adipisci
@@ -223,14 +205,6 @@ styles:
 
     // Add class to reflect javascript availability for CSS
     $doc.className = $doc.className.replace(/\bno-js\b/, 'js');
-
-    var nav = document.getElementById('protosite-nav-main');
-    var navToggle = document.querySelector('.protosite-nav-main-head .protosite-js-nav-toggle');
-
-    navToggle.addEventListener('click', function(event) {
-        event.preventDefault();
-        nav.classList.toggle('mzp-is-active');
-    }, false);
 })();
 </script>
 

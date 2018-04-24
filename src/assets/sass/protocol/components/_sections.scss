@@ -12,14 +12,14 @@
     margin: 0 auto;
     max-width: $content-max;
     min-width: $content-xs;
-    padding: 20px;
+    padding: $layout-xxs;
     position: relative;
 
     @media #{$media-md} {
-        padding: 20px $layout-lg;
+        padding: $layout-xs $layout-lg;
     }
 
     @media #{$media-lg} {
-        padding: 20px $layout-xl;
+        padding: $layout-xs $layout-xl;
     }
 }
