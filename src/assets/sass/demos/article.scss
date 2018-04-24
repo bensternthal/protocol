@@ -9,11 +9,9 @@
     background: rgba(0, 0, 0, .05);
 }
 
-// .mzp-c-menu,
-// .mzp-c-menu-title,
-// .mzp-c-menu li {
-//     @extend .mzp-qa-visible;
-// }
+.mzp-c-sidemenu {
+    @extend .mzp-qa-visible;
+}
 // -->
 
 .mzp-c-article-title {
@@ -75,17 +73,6 @@
 
 // Sidebar menu
 .mzp-c-sidemenu {
-    .mzp-c-sidemenu-title {
-        @include open-sans;
-        @include text-body-level2;
-        margin-bottom: .25em;
-        line-height: 1.5;
-
-        a {
-            padding: .25em $spacing-md;
-        }
-    }
-
     ul {
         margin: 0;
     }
@@ -102,13 +89,45 @@
 
         &:hover,
         &:focus {
-            background-color: $color-gray-light;
+            background-color: $color-gray-lighter;
         }
+    }
+
+    .mzp-is-current a {
+        font-weight: bold;
+        background-color: $color-gray-light;
+    }
+}
+
+.mzp-c-sidemenu-label {
+    @include open-sans;
+    @include text-small;
+    padding: 0 $spacing-md;
+}
+
+.mzp-c-sidemenu-title {
+    @include open-sans;
+    @include text-body-level2;
+    margin-bottom: .25em;
+    line-height: 1.5;
+
+    a {
+        padding: .25em $spacing-md;
+    }
+}
+
+.js {
+    .mzp-c-sidemenu {
+        position: relative;
     }
 }
 
 
 @media #{$media-md} {
+    .mzp-c-sidemenu-label {
+        @include visually-hidden;
+    }
+
     .mzp-has-sidebar {
         .mzp-c-article {
             @include grid-two-thirds;
