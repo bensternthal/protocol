@@ -6,3 +6,7 @@ $font-path:  '/assets/protocol/protocol/fonts';
 $image-path: '/assets/protocol/protocol/img';
 
 @import '../protocol/protocol.scss';
+
+@import
+    '../protocol/components/article',
+    '../protocol/components/sidebar-menu';

@@ -42,6 +42,7 @@
     </ul>
 
     {{!-- Molecule Patterns --}}
+    {{#if (collections "molecules")}}
     <h4>Molecules</h4>
     <ul>
       {{#each (collections "molecules" sortby="order")}}
@@ -50,8 +51,10 @@
         </li>
       {{/each}}
     </ul>
+    {{/if}}
 
     {{!-- Organism Patterns --}}
+    {{#if (collections "organisms")}}
     <h4>Organisms</h4>
     <ul>
       {{#each (collections "organisms" sortby="order")}}
@@ -60,7 +63,7 @@
         </li>
       {{/each}}
     </ul>
-
+    {{/if}}
 
     {{!-- Template Patterns --}}
     {{#if (collections "templates")}}

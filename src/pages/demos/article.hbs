@@ -58,7 +58,7 @@ styles:
 
   <aside class="mzp-l-sidebar">
     <nav class="mzp-c-sidemenu">
-      <section class="mzp-c-sidemenu-summary">
+      <section class="mzp-c-sidemenu-summary mzp-js-toggle">
         <h3 class="mzp-c-sidemenu-label">Menu label</h3>
         <ul>
           <li>Menu title</li>
@@ -202,9 +202,21 @@ styles:
     'use strict';
 
     var $doc = document.documentElement;
+    var menu = document.querySelector('.mzp-c-sidemenu');
+    var menuToggle = document.querySelector('.mzp-js-toggle');
 
     // Add class to reflect javascript availability for CSS
     $doc.className = $doc.className.replace(/\bno-js\b/, 'js');
+
+    // Make the toggle focusable
+    menuToggle.setAttribute('tabindex', '0');
+
+    // Toggle the sidebar menu
+    menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        menu.classList.toggle('mzp-is-active');
+    }, false);
+
 })();
 </script>
 
