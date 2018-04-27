@@ -15,30 +15,6 @@
 // }
 // -->
 
-.mzp-c-article-title {
-    @include text-display-level1;
-}
-
-.mzp-c-article-intro {
-    @include text-body-level1;
-}
-
-// Step down the heading levels
-.mzp-c-article {
-    max-width: 640px;
-
-    h2 {
-        @include text-display-level3;
-    }
-
-    h3 {
-        @include text-display-level4;
-    }
-
-    h4 {
-        @include text-body-level1;
-    }
-}
 
 // Article links... is this a component?
 .mzp-c-article-links {
@@ -54,7 +30,7 @@
     }
 
     a {
-        color: $color-text-primary;
+        color: $color-primary;
         text-decoration: underline;
 
         &:hover,
@@ -88,11 +64,13 @@
         border-radius: 4px;
         display: block;
         padding: .25em $spacing-lg;
+        text-decoration: none;
         transition: background-color 100ms ease-in;
 
         &:hover,
         &:focus {
             background-color: $color-gray-lighter;
+            text-decoration: underline;
         }
     }
 
@@ -147,14 +125,20 @@
     .mzp-has-sidebar {
         .mzp-c-article {
             @include grid-two-thirds;
-            float: left;
-            padding-left: $spacing-md;
+            @include bidi((
+                (float, left, right),
+                (padding-left, $spacing-md, 0),
+                (padding-right, 0, $spacing-md)
+            ));
         }
 
         .mzp-l-sidebar {
             @include grid-third;
-            float: left;
-            padding-right: $spacing-md;
+            @include bidi((
+                (float, left, right),
+                (padding-right, $spacing-md, 0),
+                (padding-left, 0, $spacing-md)
+            ));
         }
     }
 
@@ -189,7 +173,6 @@
     .mzp-has-sidebar {
         .mzp-c-article {
             @include grid-three-quarters;
-            max-width: 640px;
         }
 
         .mzp-l-sidebar {
@@ -232,6 +215,8 @@ $width-max-content: 1420px; // 85px left padding + 1250px content + 85px right p
 // Grid columns
 $pebbles-column-width:  8.333%; // 100% / 12 columns
 $pebbles-gutter-width:  20px;
+
+$color-button-green: #16da00;
 
 @mixin pebbles-span($columns) {
     @include border-box;

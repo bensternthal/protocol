@@ -1,0 +1,28 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+.mzp-c-article {
+    max-width: $content-md;
+
+    // Step down the heading levels
+    h2 {
+        @include text-display-level3;
+    }
+
+    h3 {
+        @include text-display-level4;
+    }
+
+    h4 {
+        @include text-body-level1;
+    }
+}
+
+.mzp-c-article-title {
+    @include text-display-level1;
+}
+
+.mzp-c-article-intro {
+    @include text-body-level1;
+}
